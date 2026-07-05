@@ -23,15 +23,19 @@ export default function Cart() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5000/create-order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          amount: total,
-        }),
-      });
+     const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/create-order`,
+  {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      amount: total,
+    }),
+  }
+);
+      
 
       const order = await response.json();
 
