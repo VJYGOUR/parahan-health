@@ -35,7 +35,7 @@ app.post("/create-order", async (req, res) => {
   console.log("--------", order.id);
   res.json(order);
 });
-const clientBuildPath = path.join(__dirname, "../../client/dist");
+const clientBuildPath = path.join(__dirname, "../client/dist");
 
 app.use(express.static(clientBuildPath));
 app.get(/^(?!\/api).*/, (req, res) => {
